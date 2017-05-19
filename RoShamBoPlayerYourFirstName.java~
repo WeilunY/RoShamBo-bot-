@@ -1,0 +1,21 @@
+public class RoShamBoPlayerJuthamas_William extends RoShamBoPlayer
+{
+    
+    public RoShamBoPlayerJuthamas_William(String name)
+    {
+        super(name);
+    }
+    
+    @Override
+    public String makeMove()
+    {
+        int size = getMyMoves().size();
+        List<String> me = getMyMoves();
+        List<String> other = getOpponentMoves()
+
+        if(getMyMoves() = "rock" )
+        return "scissors";
+        
+    }
+    
+}
