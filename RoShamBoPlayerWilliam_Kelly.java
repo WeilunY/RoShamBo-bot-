@@ -107,7 +107,7 @@ public class RoShamBoPlayerWilliam_Kelly extends RoShamBoPlayer
 
 //Checking if the bot is my early version bot..
 
-public boolean myself(String a, String b, String c)
-{
+//public boolean myself(String a, String b, String c)
+//{
 
-}
+//}
