@@ -25,7 +25,74 @@ public class RoShamBoPlayerWilliam_Kelly extends RoShamBoPlayer
         if(size > 2 )
         {
             // No Pattern Scenario
-            if(!pattern(other.get(size - 1), other.get(size), other.get(size-2)))
+            if(pattern(other.get(size - 1), other.get(size), other.get(size-2)))
+            {
+
+                if(other.get(size).equals("rock"))
+                    return "paper";
+
+                if(other.get(size).equals("paper"))
+                    return "scissors";
+
+                else
+                    return "rock";
+
+            }
+
+            if(myself(size) ) {
+                if(win(size) == 0)
+                {
+                    int rnd = (int) (Math.random()*3);
+                    return move[rnd];
+                }
+
+                if(win(size) == 1) {
+                    if (me.get(size - 1).equals("rock"))
+                        return "paper";
+                    if (me.get(size - 1).equals("paper"))
+                        return "scissors";
+                    else
+                        return "rock";
+                }
+
+                else {
+                    if (other.get(size).equals("rock"))
+                        return "scissors";
+                    if (other.get(size).equals("paper"))
+                        return "rock";
+                    else
+                        return "paper";
+                }
+
+
+
+            }
+
+            if(myself(size) && myself(size-1)) {
+                if (win(size) == 0) {
+                    int rnd = (int) (Math.random() * 3);
+                    return move[rnd];
+                }
+
+                if (win(size) == 1) {
+                    if (me.get(size - 1).equals("rock"))
+                        return "paper";
+                    if (me.get(size - 1).equals("paper"))
+                        return "scissors";
+                    else
+                        return "rock";
+                } else {
+                    if (other.get(size).equals("rock"))
+                        return "scissors";
+                    if (other.get(size).equals("paper"))
+                        return "rock";
+                    else
+                        return "paper";
+                }
+            }
+
+            //Pattern Scenario
+            else
             {
                 //draw with no pattern --> return random
                 if(win(size) == 0)
@@ -51,19 +118,6 @@ public class RoShamBoPlayerWilliam_Kelly extends RoShamBoPlayer
                 }
             }
 
-            //Pattern Scenario
-            else{
-
-                if(other.get(size).equals("rock"))
-                    return "paper";
-
-                if(other.get(size).equals("paper"))
-                    return "scissors";
-
-                else
-                    return "rock";
-
-            }
 
         }
 
@@ -100,14 +154,28 @@ public class RoShamBoPlayerWilliam_Kelly extends RoShamBoPlayer
     //checking the pattern
     public boolean pattern(String a, String b, String c)
     {
+
         return a.equals(b) && b.equals(c);
     }
 
-}
+
 
 //Checking if the bot is my early version bot..
 
-//public boolean myself(String a, String b, String c)
-//{
+    public boolean myself(int num)
+    {
+        if(win(num) == 1) {
+            return me.get(num-1).equals(other.get(num));
+        }
 
-//}
+        if(win(num) == 2) {
+            return other.get(num).equals("paper") && other.get(num - 1).equals("rock")
+                    || other.get(num).equals("rock") && other.get(num - 1).equals("scissors")
+                    || other.get(num).equals("scissors") && other.get(num - 1).equals("paper");
+        }
+
+        return false;
+        }
+
+
+    }
