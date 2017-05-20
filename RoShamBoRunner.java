@@ -25,7 +25,7 @@ public class RoShamBoRunner
         //  *** add players[4] = new RoShamBoPlayerYourName("YourName");
         //  *** "YourName" might be "Arman" for example
         
-        int numPlayers = 5;
+        int numPlayers = 6;
         RoShamBoPlayer[] players = new RoShamBoPlayer[numPlayers];
         //players[0] = new RoShamBoPlayerRandomBot("RandomBot");
         //players[1] = new RoShamBoPlayerFrequencyBot("FrequencyBot");
@@ -36,7 +36,7 @@ public class RoShamBoRunner
         players[2] = new RoShamBoPlayerJessica("Jess");
         players[3] = new RoShamBoPlayerVanessa("Vane");
         players[4] = new RoShamBoPlayerWilliam_Kelly("Test");
-        
+        players[5] = new RoshamBoWilliam("Test2");
         RoShamBoTournament tourney = new RoShamBoTournament(players);
         tourney.roundRobin();
         RoShamBoResults.displayResults();
